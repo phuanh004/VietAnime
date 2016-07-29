@@ -1,5 +1,6 @@
 <?php
-
+    require 'define/connect_db.php';
+    require 'define/define.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,7 +33,7 @@
         <div class="container">
             <div class="row">
                 <?php
-                    $json_data = file_get_contents('json/newanime.json');
+                    $json_data = file_get_contents($websiteInitURL);
                     $json = json_decode($json_data, true);
                 for ($i=0; $i<count($json); $i++) {
                     echo '<div class="col s12 m4 l3">

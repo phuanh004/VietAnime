@@ -17,6 +17,7 @@
 
         include_once 'simple_html_dom.php';
         include_once 'image_resize_crop.php';
+        include_once 'define/define.php';
 
         $agent = 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36';
         $ch = curl_init();
@@ -65,7 +66,7 @@
 
         curl_close($ch);
 
-        $myfile = fopen("json/newanime.json", "w") or die("Unable to open file!");
+        $myfile = fopen($websiteInitURL, "w") or die("Unable to open file!");
         fwrite($myfile, json_encode(array_values($listPhimArray)));
         echo '<a href="https://vietanime.com">Success click here to back</a>';
         fclose($myfile);
