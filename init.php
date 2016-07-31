@@ -43,6 +43,7 @@
 
         //          file_put_contents($img, file_get_contents($url));
         //          resize_crop_image(101, 121, $img, $img);
+        //          resize_crop_image(208, 297, $img, $img);
 //                  $item1['image'] = 'https://parser-phuanh004.c9users.io/'.$img;
 
 

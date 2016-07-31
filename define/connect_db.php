@@ -7,12 +7,13 @@
 //
 //    // Create connection
     $db = new mysqli($servername, $username, $password, $database, $dbport);
-
+    $db->query("SET NAMES 'utf8'");
 //    $db = new mysqli($servername, $username, $password, $database);
 
     // Check connection
     if ($db->connect_error) {
         die("Connection failed: " . $db->connect_error);
+        exit();
     }
-    echo 'success connect db';
+//    echo 'success connect db';
 ?>

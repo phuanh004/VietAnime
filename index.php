@@ -1,5 +1,4 @@
 <?php
-    require 'define/connect_db.php';
     require 'define/define.php';
 ?>
 <!DOCTYPE html>
@@ -33,29 +32,29 @@
         <div class="container">
             <div class="row">
                 <?php
-                    $json_data = file_get_contents($websiteInitURL);
+                    $json_data = file_get_contents($websiteNewURL);
                     $json = json_decode($json_data, true);
-                for ($i=0; $i<count($json); $i++) {
-                    echo '<div class="col s12 m4 l3">
-                        <div class="col s12 m11 l11">
-                            <div class="card hoverable">
-                                <div class="card-image waves-effect waves-block waves-light">
-                                    <div class="thumbnail">
-                                        <img src="' . $json[$i]['image'] . '" class="responsive-img activator" alt="Image" />
+                    for ($i=0; $i<count($json); $i++) {
+                        echo '<div class="col s12 m4 l3">
+                            <div class="col s12 m11 l11">
+                                <div class="card hoverable">
+                                    <div class="card-image waves-effect waves-block waves-light">
+                                        <div class="thumbnail">
+                                            <img src="' . $json[$i]['image'] . '" class="responsive-img activator" alt="Image" />
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <span class="card-title activator grey-text text-darken-4 truncate">' . $json[$i]['title'] . '</span>
+                                        <p><a href="' . $json[$i]['link'] . '">Xem phim</a></p>
+                                    </div>
+                                    <div class="card-reveal">
+                                        <span class="card-title grey-text text-darken-4">' . $json[$i]['title'] . '<i class="material-icons right">close</i></span>
+                                        <p>' . $json[$i]['description'] . '</p>
                                     </div>
                                 </div>
-                                <div class="card-content">
-                                    <span class="card-title activator grey-text text-darken-4">' . $json[$i]['title'] . '</span>
-                                    <p><a href="' . $json[$i]['link'] . '">Xem phim</a></p>
-                                </div>
-                                <div class="card-reveal">
-                                    <span class="card-title grey-text text-darken-4">' . $json[$i]['title'] . '<i class="material-icons right">close</i></span>
-                                    <p>' . $json[$i]['description'] . '</p>
-                                </div>
                             </div>
-                        </div>
-                    </div>';
-                }
+                        </div>';
+                    }
                  ?>
             </div>
         </div>
